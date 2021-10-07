@@ -5,7 +5,6 @@ WORKDIR /work
 COPY . /work
 
 # install dependencies
-
 RUN apt-get update && apt-get install -y \
     software-properties-common
 
@@ -32,6 +31,6 @@ RUN pip3 install \
 
 # ! Useful CMD:
 # * Build: docker build -t env-ubuntu .
-# * Bindmount: docker run -it -p 3000:3000 -v C:/PoC/poc-centos8/src:/usr/home/poc-centos8/src env-ubuntu
-# * Named Volume: docker run -dp 3000:3000 -v tesseract-vol:/usr/src/poc-centos8/src poc-env
-# * Foreground (Interact with CLI): docker run -it -p 3000:3000 poc-env
+# ? Bindmount: docker run -it -v C:/dev/env-ubuntu/dev:/work/dev env-ubuntu
+# ? Foreground (Interact with CLI): docker run -it env-ubuntu
+# * ctrl + d to exit
